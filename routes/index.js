@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer'); 
+var smtpTransport = require('nodemailer-smtp-transport');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index');
@@ -18,16 +19,13 @@ router.get('/send',(req,res,next)=>{
 
 
 
-    let transporter = nodemailer.createTransport({
-        // host: 'smtp.gmail.com',
-        // port: 465,
-        // secure: true, // true for 465, false for other ports
-        service:'Gmail',
-        auth: {
-            user: process.env.email,
-            pass: process.env.password // generated ethereal password
-        }
-    });
+    var transporter = nodemailer.createTransport(smtpTransport({
+      service: 'gmail',
+      auth: {
+          user: process.env.email, // my mail
+          pass: process.env.password
+      }
+  }));
 
     // setup email data with unicode symbols
     let mailOptions = {
