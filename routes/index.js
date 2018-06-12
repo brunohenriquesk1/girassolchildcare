@@ -24,8 +24,8 @@ router.get('/send',(req,res,next)=>{
         // secure: true, // true for 465, false for other ports
         service:'Gmail',
         auth: {
-            user: 'brunohbandrade@gmail.com',
-            pass: '98falcon' // generated ethereal password
+            user: process.env.email,
+            pass: process.env.password // generated ethereal password
         }
     });
 
@@ -53,4 +53,9 @@ router.get('/send',(req,res,next)=>{
  });
 
 }) 
+
+router.get('/*', function(req, res ){
+
+  res.redirect('/')
+})
 module.exports = router;
