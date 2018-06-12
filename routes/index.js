@@ -32,7 +32,7 @@ router.get('/send',(req,res,next)=>{
     // setup email data with unicode symbols
     let mailOptions = {
         from: req.query.from, // sender address
-        to: 'brunohbandrade@gmail.com', // list of receivers
+        to: process.env.email, // list of receivers
         subject: req.query.subject, // Subject line
         text: req.query.text // plain text body
        
@@ -54,8 +54,9 @@ router.get('/send',(req,res,next)=>{
 
 }) 
 
-router.get('/*', function(req, res ){
+// router.get('/*', function(req, res ){
 
-  res.redirect('/')
-})
+//   res.redirect('/')
+
+// })
 module.exports = router;
