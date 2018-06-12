@@ -41,10 +41,12 @@ router.get('/send',(req,res,next)=>{
     // send mail with defined transport object
     transporter.sendMail(mailOptions, (error, info) => {
        
+      console.log(error)
         if (error != null) {
           res.json(error)
           return next()
         }
+        console.log(info)
          res.send("success")  
          return next()
         // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
