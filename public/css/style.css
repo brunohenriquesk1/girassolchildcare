@@ -851,6 +851,7 @@ a#scrollUp {
 
 /* Background Image */
 .bg-pngimage--1 {
+  opacity: 0.9;
   background-image: url(../images/gallery/IMG_0915.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -1075,7 +1076,7 @@ a#scrollUp {
   padding: 140px 0; }
 
 .section-padding--md--top {
-  padding-top: 140px; }
+  padding-top: 50px; }
 
 .section-padding--md--bottom {
   padding-bottom: 130px; }
@@ -2419,11 +2420,16 @@ Blocks Styles
     .email{
       margin-top:6px;
     }
+
+    .text-bold {
+
+      font-weight: bold;
+    }
 /*===============================
 	Slider Area
 =================================*/
 .slide .slide__inner h1 {
-  background: #89d700;
+  background-color:rgba(0, 0, 0, 0.1);
   color: #ffffff;
   opacity: 0.8;
   display: inline-block;
@@ -2436,8 +2442,9 @@ Blocks Styles
   margin-bottom: 30px;
   margin-top: 1px; }
   .slide .slide__inner .slider__text h2 {
-    opacity: 0.8;
-    background: #89d700;
+   
+    background-color:rgba(0, 0, 0, 0.1);
+
     color: #ffffff;
     font-family: "Dosis", sans-serif;
     font-size: 48px;
