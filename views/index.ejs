@@ -658,16 +658,15 @@
 					<div class="col-lg-6 col-md-6 col-sm-6 col-12">
 							<div class="gallery wow fadeInUp">
 								
-									<form action="mailto:girassoldaycaresd@gmail.com" method="post" enctype="text/plain" >
+									<form id=fr1 >
                                            
                                                 <div class="news__input">
-													<input type="email" value="" name="mail" class="email" id="inputEmail" placeholder="Enter Your E-mail" required>
 													
-													<input type="text" value="" name="subject" class="email" id="assunto" placeholder="Subject" required>
 													
-													<input type="text" value="" name="comment" class="email" id="content" placeholder="Message" required>
+													<input type="text"  class="email" id="tb1" placeholder="Subject" required>
+													<input type="text"  class="email" id="tb2" placeholder="Message" required>
 
-													<input   style="margin-top:15px;"  type="submit"  value="Send ">
+													<input  id=send_email style="margin-top:15px;"  type="submit"  value="Send ">
 												</div>
 											
                                                 <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
@@ -888,6 +887,11 @@ google.maps.event.addDomListener(window, 'load', regular_map);
 				event.preventDefault();
 
 						$('#emailForm').trigger("reset");
+						$('#fr1').attr('action',
+                       'mailto:girassoldaycaresd@gmail.com?subject=' +
+                       $('#tb1').val() + '&body=' + $('#tb2').val());
+       					 $('#fr1').submit();
+
 				// var from, to, subject, text, opt;
 				// subject = $("#assunto").val();
 				// from = $("#inputEmail").val();
