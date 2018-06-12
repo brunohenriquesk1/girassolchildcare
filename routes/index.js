@@ -20,7 +20,7 @@ router.get('/send',(req,res,next)=>{
 
 
     var transporter = nodemailer.createTransport(smtpTransport({
-      service: 'gmail',
+      service: 'Gmail',
       auth: {
           user: process.env.email, // my mail
           pass: process.env.password
@@ -54,9 +54,9 @@ router.get('/send',(req,res,next)=>{
 
 }) 
 
-// router.get('/*', function(req, res ){
+router.get('/*', function(req, res ){
 
-//   res.redirect('/')
+  res.redirect('/')
 
-// })
+})
 module.exports = router;
